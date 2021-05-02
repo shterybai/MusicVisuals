@@ -15,14 +15,19 @@ public class Particle extends AndrewsVisual {
 
     public void fall() {
         y = y + yspeed;
+
+        if (y > AndrewsVisual.height) {
+            y = random(-200);
+        }
     }
 
     public void render() {
         // x = width/2;
         // y = 0;
         // yspeed = 1;
+        float b = AndrewsVisual.map(getSmoothedAmplitude(), 0, 1, 150, 255);
         AndrewsVisual.colorMode(HSB);
-        AndrewsVisual.stroke(30, 255, 255);
+        AndrewsVisual.stroke(30, 255, b);
         AndrewsVisual.line(x, y, x, y+10);
     }
 }

@@ -6,11 +6,11 @@ import ie.tudublin.VisualException;
 public class AndrewsVisual extends Visual {
     boolean[] keys = new boolean[1024];
     float theta;
-    Particle[] particles = new Particle[100];
+    Particle[] particles = new Particle[500];
 
     public void settings()
     {
-        size(800, 800, P3D);
+        size(1920, 1080, P3D);
         println("CWD: " + System.getProperty("user.dir"));
         //fullScreen(P3D, SPAN);
     }
@@ -34,7 +34,7 @@ public class AndrewsVisual extends Visual {
     public void setup()
     {
         for(int i = 0; i < particles.length; i++) {
-            particles[i] = new Particle(this, width/2, 0, 1);
+            particles[i] = new Particle(this, random(width), random(-1150), 1);
         }
         colorMode(HSB); 
         
