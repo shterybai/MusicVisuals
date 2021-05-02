@@ -181,7 +181,7 @@ public class RotatingAudioBands extends Visual {
 
             for (int j = 0; j < bands.length; j++) {
                 float b = map(j, 0, width, 0, 100);
-                stroke(0 , map(getSmoothedAmplitude(), 0, 1, 0, 255), map(getSmoothedAmplitude(), 0, 1, 50, 255)); 
+                stroke(0 , map(getSmoothedAmplitude(), 0, 1, 0, 255), b); 
                 strokeWeight(2);
             }
             rotateX(PI);

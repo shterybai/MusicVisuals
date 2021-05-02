@@ -6,6 +6,7 @@ import ie.tudublin.VisualException;
 public class AndrewsVisual extends Visual {
     boolean[] keys = new boolean[1024];
     float theta;
+    Particle[] particles = new Particle[100];
 
     public void settings()
     {
@@ -16,10 +17,6 @@ public class AndrewsVisual extends Visual {
 
     public void keyPressed()
     {
-
-        // if (getAudioPlayer().position() == 0) {
-        //     key = 'y';
-        // }
         if (key == ' ')
         {
             if (getAudioPlayer().isPlaying()) {
@@ -31,36 +28,15 @@ public class AndrewsVisual extends Visual {
             // getAudioPlayer().cue(0);
             
         }
-
-        // if (checkKey('y')) {
-        //     camera(0, -300 + getSmoothedAmplitude()*500, 800 - getSmoothedAmplitude()*500, 0, 0, 0, 0, 1, 0);
-        //     rotateY(theta);
-        //     System.out.println("y");
-        // }
-        // else if (checkKey('x')) {
-        //     camera(0, -600 + getSmoothedAmplitude()*400, 600 - getSmoothedAmplitude()*400, 0, 0, 0, 0, 1, 0);
-        //     rotateX(theta);
-        //     System.out.println("x");
-        // }
-        // if (checkKey('a')) {
-        //     rotleft = rotright;
-        //     rotright = rotleft;
-        //     System.out.println("a");
-        // }
-        // else if (checkKey('d')) {
-        //     rotright = rotleft;
-        //     rotleft = rotright;
-        //     System.out.println("d");
-        // }
-
         keys[keyCode] = true;
- 
     }
 
     public void setup()
     {
+        for(int i = 0; i < particles.length; i++) {
+            particles[i] = new Particle(this, width/2, 0, 1);
+        }
         colorMode(HSB); 
-        // key = 'y';
         
         setFrameSize(256);
 
@@ -132,12 +108,10 @@ public class AndrewsVisual extends Visual {
             if (checkKey('y')) {
                 camera(0, -300 + getSmoothedAmplitude()*300, 800 - getSmoothedAmplitude()*300, 0, 0, 0, 0, 1, 0);
                 rotateY(theta);
-                System.out.println("y");
             }
             else if (checkKey('x')) {
                 camera(0, -600 + getSmoothedAmplitude()*300, 600 - getSmoothedAmplitude()*300, 0, 0, 0, 0, 1, 0);
                 rotateX(theta);
-                System.out.println("x");
             }
             // if (checkKey('a')) {
             //     rotleft = rotright;
@@ -147,12 +121,10 @@ public class AndrewsVisual extends Visual {
             if (checkKey('s')) {
                 rotright = rotleft;
                 rotleft = rotright;
-                System.out.println("s");
             }
             else {
                 rotleft = rotright;
                 rotright = rotleft;
-                System.out.println("a");
             }
 
             rotateY(rotright);
@@ -180,7 +152,6 @@ public class AndrewsVisual extends Visual {
             colorMode(HSB);
 
             for (int j = 0; j < bands.length; j++) {
-                float b = map(j, 0, width, 0, 100);
                 stroke(0 , map(getSmoothedAmplitude(), 0, 1, 0, 255), map(getSmoothedAmplitude(), 0, 1, 50, 255)); 
                 strokeWeight(2);
             }
@@ -199,6 +170,11 @@ public class AndrewsVisual extends Visual {
             }
             popMatrix();
         // }
+
+        for(int i = 0; i < particles.length; i++) {
+            particles[i].render();
+            particles[i].fall();
+        }
 
     }
 
