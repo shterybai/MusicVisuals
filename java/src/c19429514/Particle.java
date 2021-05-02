@@ -21,6 +21,14 @@ public class Particle extends AndrewsVisual {
         }
     }
 
+    public void rise() {
+        y = y - yspeed;
+
+        if (y < 0) {
+            y = random(AndrewsVisual.height, AndrewsVisual.height + 200);
+        }
+    }
+
     public void render() {
         // x = width/2;
         // y = 0;
@@ -28,6 +36,7 @@ public class Particle extends AndrewsVisual {
         float b = AndrewsVisual.map(getSmoothedAmplitude(), 0, 1, 150, 255);
         AndrewsVisual.colorMode(HSB);
         AndrewsVisual.stroke(30, 255, b);
-        AndrewsVisual.line(x, y, x, y+10);
+        AndrewsVisual.line(x, y, x, y-10);
+        // AndrewsVisual.delay(3000);
     }
 }

@@ -10,9 +10,9 @@ public class AndrewsVisual extends Visual {
 
     public void settings()
     {
-        size(1920, 1080, P3D);
+        // size(1920, 1080, P3D);
         println("CWD: " + System.getProperty("user.dir"));
-        //fullScreen(P3D, SPAN);
+        fullScreen(P3D, 1);
     }
 
     public void keyPressed()
@@ -34,7 +34,7 @@ public class AndrewsVisual extends Visual {
     public void setup()
     {
         for(int i = 0; i < particles.length; i++) {
-            particles[i] = new Particle(this, random(width), random(-1150), 1);
+            particles[i] = new Particle(this, random(width), random(-1150), 5);
         }
         colorMode(HSB); 
         
@@ -152,7 +152,7 @@ public class AndrewsVisual extends Visual {
             colorMode(HSB);
 
             for (int j = 0; j < bands.length; j++) {
-                stroke(0 , map(getSmoothedAmplitude(), 0, 1, 0, 255), map(getSmoothedAmplitude(), 0, 1, 50, 255)); 
+                stroke(map(getSmoothedAmplitude(), 0, 1, 0, 100), map(getSmoothedAmplitude(), 0, 1, 155, 255), map(getSmoothedAmplitude(), 0, 1, 50, 255)); 
                 strokeWeight(2);
             }
             rotateX(PI);
@@ -173,7 +173,13 @@ public class AndrewsVisual extends Visual {
 
         for(int i = 0; i < particles.length; i++) {
             particles[i].render();
-            particles[i].fall();
+            if (checkKey('s')) {
+                particles[i].rise();
+            }
+            else {
+                particles[i].fall();
+            }
+            
         }
 
     }
