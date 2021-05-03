@@ -4,28 +4,31 @@ public class Particle extends AndrewsVisual {
     AndrewsVisual AndrewsVisual;
     float x;
     float y;
-    float yspeed;
+    float buffer = 200;
 
-    public Particle(AndrewsVisual andrewsVisual, float x, float y, float yspeed) {
+    public void setup() {
+        setFrameSize(128);
+    }
+    
+    public Particle(AndrewsVisual andrewsVisual, float x, float y) {
         AndrewsVisual = andrewsVisual;
         this.x = x;
         this.y = y;
-        this.yspeed = yspeed;
     }
 
     public void fall() {
-        y = y + yspeed;
+        y = y + AndrewsVisual.speed;
 
         if (y > AndrewsVisual.height) {
-            y = random(-200);
+            y = random(-buffer);
         }
     }
 
     public void rise() {
-        y = y - yspeed;
+        y = y - AndrewsVisual.speed;
 
         if (y < 0) {
-            y = random(AndrewsVisual.height, AndrewsVisual.height + 200);
+            y = random(AndrewsVisual.height, AndrewsVisual.height + buffer);
         }
     }
 
@@ -33,10 +36,8 @@ public class Particle extends AndrewsVisual {
         // x = width/2;
         // y = 0;
         // yspeed = 1;
-        float b = AndrewsVisual.map(getSmoothedAmplitude(), 0, 1, 150, 255);
         AndrewsVisual.colorMode(HSB);
-        AndrewsVisual.stroke(30, 255, b);
-        AndrewsVisual.line(x, y, x, y-10);
-        // AndrewsVisual.delay(3000);
+        AndrewsVisual.stroke(30, 255, 150);
+        AndrewsVisual.line(x, y, x, y-15);
     }
 }

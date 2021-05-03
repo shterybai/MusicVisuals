@@ -6,13 +6,14 @@ import ie.tudublin.VisualException;
 public class AndrewsVisual extends Visual {
     boolean[] keys = new boolean[1024];
     float theta;
+    float speed;
     Particle[] particles = new Particle[500];
 
     public void settings()
     {
         // size(1920, 1080, P3D);
         println("CWD: " + System.getProperty("user.dir"));
-        fullScreen(P3D, 1);
+        fullScreen(P3D, 2);
     }
 
     public void keyPressed()
@@ -34,16 +35,16 @@ public class AndrewsVisual extends Visual {
     public void setup()
     {
         for(int i = 0; i < particles.length; i++) {
-            particles[i] = new Particle(this, random(width), random(-1150), 5);
+            particles[i] = new Particle(this, random(width), random(height));
         }
-        colorMode(HSB); 
+        colorMode(HSB);
         
         setFrameSize(256);
 
         startMinim();
         loadAudio("glish.mp3");
         // getAudioPlayer().play();
-        //startListening();S
+        //startListening();
         
     }
 
@@ -71,7 +72,7 @@ public class AndrewsVisual extends Visual {
         }
         calculateFrequencyBands();
         // background(0);
-        background(200, 255, map(getSmoothedAmplitude(), 0, 1, 0, 100));
+        background(200, 255, map(getSmoothedAmplitude(), 0, 1, 0, 75));
 
         noFill();
         stroke(255);
@@ -99,6 +100,9 @@ public class AndrewsVisual extends Visual {
             float x = sin(theta) * radius;
             float z = cos(theta) * radius;
             float h = bands[i];
+
+            speed = map(h, 0, 10, 0, 15);
+
             pushMatrix();
             translate(x, - h / 2 , z);
 
