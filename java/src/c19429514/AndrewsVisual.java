@@ -6,7 +6,7 @@ import ie.tudublin.VisualException;
 public class AndrewsVisual extends Visual {
     boolean[] keys = new boolean[1024];
     float theta;
-    float speed;
+    float speed, brightness, saturation;
     Particle[] particles = new Particle[500];
 
     public void settings()
@@ -102,6 +102,8 @@ public class AndrewsVisual extends Visual {
             float h = bands[i];
 
             speed = map(h, 0, 10, 0, 15);
+            brightness = map(h, 0, bands.length, 0, 150);
+            // saturation = map(h, 0, bands.length, 100, 255);
 
             pushMatrix();
             translate(x, - h / 2 , z);

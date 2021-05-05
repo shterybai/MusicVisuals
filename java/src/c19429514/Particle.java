@@ -37,7 +37,7 @@ public class Particle extends AndrewsVisual {
         // y = 0;
         // yspeed = 1;
         AndrewsVisual.colorMode(HSB);
-        AndrewsVisual.stroke(30, 255, 150);
-        AndrewsVisual.line(x, y, x, y-15);
+        AndrewsVisual.stroke(30, 255, AndrewsVisual.brightness);
+        AndrewsVisual.line(x, y, x, y-20);
     }
 }
