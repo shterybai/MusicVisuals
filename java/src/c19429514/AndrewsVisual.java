@@ -2,12 +2,17 @@ package c19429514;
 
 import ie.tudublin.Visual;
 import ie.tudublin.VisualException;
+import processing.core.PVector;
 
 public class AndrewsVisual extends Visual {
     boolean[] keys = new boolean[1024];
     float theta;
     float speed, brightness, saturation;
     Particle[] particles = new Particle[500];
+
+    Button button1;
+    Button button2;
+    Button button3;
 
     public void settings()
     {
@@ -42,9 +47,11 @@ public class AndrewsVisual extends Visual {
         setFrameSize(256);
 
         startMinim();
-        loadAudio("glish.mp3");
-        // getAudioPlayer().play();
-        //startListening();
+        loadAudio("demo.wav");
+        
+        button1 = new Button(this, width/2 - width/3, height/8, "deadmau5 - Glish");
+        button2 = new Button(this, width/2, height/8, "deadmau5 - Seeya");
+        button3 = new Button(this, width/2 + width/3, height/8, "me!");
         
     }
 
@@ -178,6 +185,7 @@ public class AndrewsVisual extends Visual {
         // }
 
         for(int i = 0; i < particles.length; i++) {
+
             particles[i].render();
             if (checkKey('s')) {
                 particles[i].rise();
@@ -186,6 +194,12 @@ public class AndrewsVisual extends Visual {
                 particles[i].fall();
             }
             
+        }
+
+        if (getAudioPlayer().isPlaying() == false) {
+            button1.render();
+            button2.render();
+            button3.render();
         }
 
     }
