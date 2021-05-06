@@ -41,6 +41,7 @@ public class Button extends AndrewsVisual{
             hover = true;
             if (AndrewsVisual.mousePressed == true) {
                 selected = true;
+                // deselectOtherButtons(this);
                 circumflex = true;
             }
         }
@@ -56,7 +57,8 @@ public class Button extends AndrewsVisual{
         else if (circumflex == true && AndrewsVisual.mousePressed == true) {
             circumflex = false;
             AndrewsVisual.mousePressed = false;
-            selected = false;
+            // selected = false;
+            AndrewsVisual.deselectOtherButtons(this);
         }
         else {
             hover = false;
@@ -65,7 +67,7 @@ public class Button extends AndrewsVisual{
         if (hover) {
             AndrewsVisual.stroke(60, 255, 255);
         }
-        else {
+        else if (!hover) {
             AndrewsVisual.stroke(255);
             circumflex = false;
         }
@@ -75,10 +77,13 @@ public class Button extends AndrewsVisual{
             AndrewsVisual.line(x, y + size.y/2, x-20, y + size.y/2+20);
             AndrewsVisual.line(x, y + size.y/2, x+20, y + size.y/2+20);
         }
-        else {
+        else if (!selected) {
             AndrewsVisual.stroke(255);
             circumflex = false;
         }
+        
+        
+        
 
         AndrewsVisual.pushMatrix();
 

@@ -208,7 +208,6 @@ public class AndrewsVisual extends Visual {
         }
 
         if (getAudioPlayer().isPlaying() == false) {
-            checkSelectedButton();
             button1.render();
             button2.render();
             button3.render();
@@ -216,16 +215,31 @@ public class AndrewsVisual extends Visual {
 
     }
 
-    void checkSelectedButton() {
-        if (button1.selected) {
+    // void checkSelectedButton() {
+    //     if (button1.selected) {
+    //         button2.selected = false;
+    //         button3.selected = false;
+    //     }
+    //     else if (button2.selected) {
+    //         button1.selected = false;
+    //         button3.selected = false;
+    //     }
+    //     else if (button3.selected) {
+    //         button1.selected = false;
+    //         button2.selected = false;
+    //     }
+    // }
+
+    void deselectOtherButtons(Button button) {
+        if (button.song == button1.song) {
             button2.selected = false;
             button3.selected = false;
         }
-        else if (button2.selected) {
+        else if (button.song == button2.song) {
             button1.selected = false;
             button3.selected = false;
         }
-        else if (button3.selected) {
+        else if (button.song == button3.song) {
             button1.selected = false;
             button2.selected = false;
         }
