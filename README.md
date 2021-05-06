@@ -1,23 +1,24 @@
 # Music Visualiser Project
 
-Name:
+Name: Andrew Kennan
 
-Student Number: 
-
-## Instructions
-- Fork this repository and use it a starter project for your assignment
-- Create a new package named your student number and put all your code in this package.
-- You should start by creating a subclass of ie.tudublin.Visual
-- There is an example visualiser called MyVisual in the example package
-- Check out the WaveForm and AudioBandsVisual for examples of how to call the Processing functions from other classes that are not subclasses of PApplet
+Student Number: C19429514
 
 # Description of the assignment
+This assignment is a visual and auditory experience that the user can freely interact with and explore at thier own pace. The visuals react directly with the music, and change their size, colour, and speed depending on the amplitude of certain frequencies. The main visual is a colection of intersecting rectangles of various colours. The colours corrospond to the frequency they react to, and the size of the rectangles increases the closer to the center they are. These rectangles are also arranged in 4 distinct "orbits" that revolve around the center in alternating directions. There are an array of dots in a circular pattern in the background that change brightness and colour depending on the amplitude of the frequencies. Lastly, there are particles that fall randomly from the top of the screen, that increase brightness and opacity depending on the amplitude of the frequencies.
 
 # Instructions
+- Spacebar - play/pause music.
+- x - rotate rectangles in x-axis (must hold down key).
+- s - change rotation of rectangles and reverse particle direction (must hold down key).
+
+When the music is paused/not playing, click on a button to change the song. The song by default is "Glish", however you can also choose between "Seeya" and a demo of one of my very own songs.
 
 # How it works
+X
 
 # What I am most proud of in the assignment
+X
 
 # Markdown Tutorial
 

@@ -2,7 +2,6 @@ package c19429514;
 
 import ie.tudublin.Visual;
 import ie.tudublin.VisualException;
-import processing.core.PVector;
 
 public class AndrewsVisual extends Visual {
     boolean[] keys = new boolean[1024];
@@ -47,11 +46,23 @@ public class AndrewsVisual extends Visual {
         setFrameSize(256);
 
         startMinim();
-        loadAudio("glish.mp3");
         
-        button1 = new Button(this, width/2 - width/3, height/8, "deadmau5 - Glish");
-        button2 = new Button(this, width/2, height/8, "deadmau5 - Seeya");
-        button3 = new Button(this, width/2 + width/3, height/8, "me!");
+        button1 = new Button(this, width/2 - width/3, height/8, "deadmau5 - Glish", true);
+        button2 = new Button(this, width/2, height/8, "deadmau5 - Seeya", false);
+        button3 = new Button(this, width/2 + width/3, height/8, "me!", false);
+
+        if (button1.selected) {
+            loadAudio("glish.mp3");
+        }
+        if (button2.selected) {
+            loadAudio("seeya.mp3");
+        }
+        if (button3.selected) {
+            loadAudio("demo.wav");
+        }
+        else {
+            loadAudio("glish.mp3");
+        }
         
     }
 
@@ -67,7 +78,7 @@ public class AndrewsVisual extends Visual {
     boolean spinLeft = false;
 
     public void draw()
-    {
+    {   
         calculateAverageAmplitude();
         try
         {
@@ -197,11 +208,27 @@ public class AndrewsVisual extends Visual {
         }
 
         if (getAudioPlayer().isPlaying() == false) {
+            checkSelectedButton();
             button1.render();
             button2.render();
             button3.render();
         }
 
+    }
+
+    void checkSelectedButton() {
+        if (button1.selected) {
+            button2.selected = false;
+            button3.selected = false;
+        }
+        else if (button2.selected) {
+            button1.selected = false;
+            button3.selected = false;
+        }
+        else if (button3.selected) {
+            button1.selected = false;
+            button2.selected = false;
+        }
     }
 
     float angle = 0;
