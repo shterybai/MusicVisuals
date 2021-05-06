@@ -123,7 +123,7 @@ public class AndrewsVisual extends Visual {
                 rotright = rotleft;
             }
 
-            // Outer reectangles
+            // Outer rectangles
             rotateY(rotright);
             box(700, h*2, 700);
 
