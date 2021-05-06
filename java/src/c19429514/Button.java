@@ -64,22 +64,16 @@ public class Button extends AndrewsVisual{
             hover = false;
         }
 
-        if (hover) {
-            AndrewsVisual.stroke(60, 255, 255);
-        }
-        else if (!hover) {
-            AndrewsVisual.stroke(255);
-            circumflex = false;
-        }
-
         if (selected) {
             AndrewsVisual.stroke(60, 255, 255);
             AndrewsVisual.line(x, y + size.y/2, x-20, y + size.y/2+20);
             AndrewsVisual.line(x, y + size.y/2, x+20, y + size.y/2+20);
         }
-        else if (!selected) {
+        else if (hover) {
+            AndrewsVisual.stroke(60, 255, 255);
+        }
+        else if (!selected || !hover) {
             AndrewsVisual.stroke(255);
-            circumflex = false;
         }
         
         
