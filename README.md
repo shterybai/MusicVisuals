@@ -39,6 +39,12 @@ rotateY(rotleft*2);
 box(100, h*5, 100);
 ```
 
+First rectangle pattern:
+![Rectangles1](images/rectangles1.png)
+
+Second rectangle pattern:
+![Rectangles2](images/rectangles2.png)
+
 ### Dots
 The dots in the background look like they are on a flat plane, but are actually mapped in the pattern of a very large sphere going around the camera:
 ```Java
@@ -60,6 +66,9 @@ for (int j = 0; j < total; j++) {
     }
 }
 ```
+
+Dots pattern:
+![Dots1](images/dots1.png)
 
 ### Particles
 The particles are rendered like this:
@@ -109,6 +118,9 @@ public void render() {
     AndrewsVisual.line(x, y, x, y-20);
 }
 ```
+
+Particles pattern:
+![Particles1](images/particles1.png)
 
 ### Buttons
 The buttons are only rendered when there is no music playing.
@@ -179,6 +191,9 @@ public void render() {
 }
 ```
 
+Buttons design:
+![Buttons1](images/buttons1.png)
+
 # What I am most proud of in the assignment
 I think in terms of the programming behind the project, I am most proud of the music selection buttons. They proved to be very challenging to make and allowed greater interactivity on the part of the user. It also breaks up the repition and adds a nice amount of variation to the project. Asides from that though, I am also extremely proud of the fact that I was able to implement a short work-in-progress sample of a song that I'm currently writing. 
 
@@ -191,72 +206,3 @@ I think in terms of the programming behind the project, I am most proud of the m
 - deadmau5 - [Coelacanth 2](https://www.youtube.com/watch?v=ER9NADluIUk)
 - deadmau5 - [Bleed](https://www.youtube.com/watch?v=T7UXbkzh8VI)
 - anything by Nujabes ([A Day by Atmoshpere Supreme](https://www.youtube.com/watch?v=NlQGtLo4T6M) is a good one)
-
-# Markdown Tutorial
-
-This is *emphasis*
-
-This is a bulleted list
-
-- Item
-- Item
-
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](http://bryanduggan.org)
-
-# Headings
-## Headings
-#### Headings
-##### Headings
-
-This is code:
-
-```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-So is this without specifying the language:
-
-```
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-This is an image using a relative URL:
-
-![An image](images/p8.png)
-
-This is an image using an absolute URL:
-
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
-
-This is a youtube video:
-
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
-
-This is a table:
-
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-

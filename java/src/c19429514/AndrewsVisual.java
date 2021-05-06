@@ -205,7 +205,7 @@ public class AndrewsVisual extends Visual {
         else if (button.song == button2.song) {
             button1.selected = false;
             button3.selected = false;
-            loadAudio("seeya.mp3");
+            loadAudio("seeya.wav");
         }
         else if (button.song == button3.song) {
             button1.selected = false;
