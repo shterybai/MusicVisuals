@@ -17,7 +17,7 @@ public class AndrewsVisual extends Visual {
     {
         // size(1920, 1080, P3D);
         println("CWD: " + System.getProperty("user.dir"));
-        fullScreen(P3D, 1);
+        fullScreen(P3D, 2);
     }
 
     public void keyPressed()
@@ -51,19 +51,7 @@ public class AndrewsVisual extends Visual {
         button2 = new Button(this, width/2, height/8, "deadmau5 - Seeya", false);
         button3 = new Button(this, width/2 + width/3, height/8, "me!", false);
 
-        if (button1.selected) {
-            loadAudio("glish.mp3");
-        }
-        if (button2.selected) {
-            loadAudio("seeya.mp3");
-        }
-        if (button3.selected) {
-            loadAudio("demo.wav");
-        }
-        else {
-            loadAudio("glish.mp3");
-        }
-        
+        loadAudio("glish.mp3");
     }
 
     float radius = 200;
@@ -214,34 +202,22 @@ public class AndrewsVisual extends Visual {
         }
 
     }
-
-    // void checkSelectedButton() {
-    //     if (button1.selected) {
-    //         button2.selected = false;
-    //         button3.selected = false;
-    //     }
-    //     else if (button2.selected) {
-    //         button1.selected = false;
-    //         button3.selected = false;
-    //     }
-    //     else if (button3.selected) {
-    //         button1.selected = false;
-    //         button2.selected = false;
-    //     }
-    // }
-
+    
     void deselectOtherButtons(Button button) {
         if (button.song == button1.song) {
             button2.selected = false;
             button3.selected = false;
+            loadAudio("glish.mp3");
         }
         else if (button.song == button2.song) {
             button1.selected = false;
             button3.selected = false;
+            loadAudio("seeya.mp3");
         }
         else if (button.song == button3.song) {
             button1.selected = false;
             button2.selected = false;
+            loadAudio("demo.wav");
         }
     }
 

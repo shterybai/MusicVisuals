@@ -37,34 +37,22 @@ public class Button extends AndrewsVisual{
         AndrewsVisual.noFill();
 
         if (AndrewsVisual.mouseX < x + size.x/2 && AndrewsVisual.mouseY < y + size.y/2 && AndrewsVisual.mouseX > x - size.x/2 && AndrewsVisual.mouseY > y - size.y/2 && circumflex == false) {
-            // AndrewsVisual.stroke(60, 255, 255);
             hover = true;
             if (AndrewsVisual.mousePressed == true) {
                 selected = true;
-                // deselectOtherButtons(this);
                 circumflex = true;
             }
         }
-        // else if (circumflex == true && hover == true) {
-        //     selected = true;
-
-        //     // if (circumflex == true && AndrewsVisual.mousePressed == true) {
-        //     //     circumflex = false;
-        //     //     // AndrewsVisual.mousePressed = false;
-        //     //     AndrewsVisual.stroke(255);
-        //     // }
-        // }
         else if (circumflex == true && AndrewsVisual.mousePressed == true) {
             circumflex = false;
             AndrewsVisual.mousePressed = false;
-            // selected = false;
             AndrewsVisual.deselectOtherButtons(this);
         }
         else {
             hover = false;
         }
 
-        if (selected) {
+        if (selected == true) {
             AndrewsVisual.stroke(60, 255, 255);
             AndrewsVisual.line(x, y + size.y/2, x-20, y + size.y/2+20);
             AndrewsVisual.line(x, y + size.y/2, x+20, y + size.y/2+20);
@@ -75,9 +63,6 @@ public class Button extends AndrewsVisual{
         else if (!selected || !hover) {
             AndrewsVisual.stroke(255);
         }
-        
-        
-        
 
         AndrewsVisual.pushMatrix();
 
