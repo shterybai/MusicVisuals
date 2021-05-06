@@ -18,7 +18,7 @@ public class AndrewsVisual extends Visual {
     {
         // size(1920, 1080, P3D);
         println("CWD: " + System.getProperty("user.dir"));
-        fullScreen(P3D, 2);
+        fullScreen(P3D, 1);
     }
 
     public void keyPressed()
@@ -47,7 +47,7 @@ public class AndrewsVisual extends Visual {
         setFrameSize(256);
 
         startMinim();
-        loadAudio("demo.wav");
+        loadAudio("glish.mp3");
         
         button1 = new Button(this, width/2 - width/3, height/8, "deadmau5 - Glish");
         button2 = new Button(this, width/2, height/8, "deadmau5 - Seeya");
