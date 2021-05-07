@@ -126,7 +126,9 @@ Particles pattern:
 
 ![Particles1](images/particles1.png)
 
-### Buttons
+# What I am most proud of in the assignment
+I think in terms of the programming behind the project, I am most proud of the music selection buttons. They proved to be very challenging to make and allowed greater interactivity on the part of the user. It also breaks up the repition and adds a nice amount of variation to the project. 
+
 The buttons are only rendered when there is no music playing.
 ```Java
 // Render buttons if music not playing
@@ -199,8 +201,7 @@ Buttons design:
 
 ![Buttons1](images/buttons1.png)
 
-# What I am most proud of in the assignment
-I think in terms of the programming behind the project, I am most proud of the music selection buttons. They proved to be very challenging to make and allowed greater interactivity on the part of the user. It also breaks up the repition and adds a nice amount of variation to the project. Asides from that though, I am also extremely proud of the fact that I was able to implement a short work-in-progress sample of a song that I'm currently writing. 
+Asides from that though, I am also extremely proud of the fact that I was able to implement a short work-in-progress sample of a song that I'm currently writing. 
 
 # Video of my Submission
 You can watch the video [here.](https://www.youtube.com/watch?v=XMEsAbgPAew) Sadly, YouTube heavily compresses videos when uploaded, so the quality is far worse that I'd like it to be.
