@@ -201,7 +201,7 @@ Buttons design:
 
 ![Buttons1](images/buttons1.png)
 
-Asides from that though, I am also extremely proud of the fact that I was able to implement a short work-in-progress sample of a song that I'm currently writing. 
+Asides from that, I am also extremely proud of the fact that I was able to implement a short work-in-progress sample of a song that I'm currently writing. 
 
 # Video of my Submission
 You can watch the video [here.](https://www.youtube.com/watch?v=XMEsAbgPAew) Sadly, YouTube heavily compresses videos when uploaded, so the quality is far worse that I'd like it to be.
