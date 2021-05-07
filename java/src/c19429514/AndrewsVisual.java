@@ -15,9 +15,9 @@ public class AndrewsVisual extends Visual {
 
     public void settings()
     {
-        // size(1920, 1080, P3D);
+        size(1920, 1080, P3D);
         println("CWD: " + System.getProperty("user.dir"));
-        fullScreen(P3D, 1);
+        // fullScreen(P3D, 1);
     }
 
     public void keyPressed()
@@ -152,11 +152,11 @@ public class AndrewsVisual extends Visual {
 
         int total = 100; // number of dots
         colorMode(HSB);
+        strokeWeight(3);
 
         // Change colour, brightness, and saturation of dots depending on amplitude
         for (int j = 0; j < bands.length; j++) {
-            stroke(map(getSmoothedAmplitude(), 0, 1, 0, 100), map(getSmoothedAmplitude(), 0, 1, 155, 255), map(getSmoothedAmplitude(), 0, 1, 50, 255)); 
-            strokeWeight(2);
+            stroke(map(getSmoothedAmplitude(), 0, 1, 0, 100), 255, map(getSmoothedAmplitude(), 0, 1, 140, 255)); 
         }
 
         // Generate dots in spherical pattern

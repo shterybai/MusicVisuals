@@ -40,9 +40,11 @@ box(100, h*5, 100);
 ```
 
 First rectangle pattern:
+
 ![Rectangles1](images/rectangles1.png)
 
 Second rectangle pattern:
+
 ![Rectangles2](images/rectangles2.png)
 
 ### Dots
@@ -68,6 +70,7 @@ for (int j = 0; j < total; j++) {
 ```
 
 Dots pattern:
+
 ![Dots1](images/dots1.png)
 
 ### Particles
@@ -120,6 +123,7 @@ public void render() {
 ```
 
 Particles pattern:
+
 ![Particles1](images/particles1.png)
 
 ### Buttons
@@ -192,10 +196,18 @@ public void render() {
 ```
 
 Buttons design:
+
 ![Buttons1](images/buttons1.png)
 
 # What I am most proud of in the assignment
 I think in terms of the programming behind the project, I am most proud of the music selection buttons. They proved to be very challenging to make and allowed greater interactivity on the part of the user. It also breaks up the repition and adds a nice amount of variation to the project. Asides from that though, I am also extremely proud of the fact that I was able to implement a short work-in-progress sample of a song that I'm currently writing. 
+
+# Video of my Submission
+You can watch the video [here.](https://www.youtube.com/watch?v=XMEsAbgPAew) Sadly, YouTube heavily compresses videos when uploaded, so the quality is far worse that I'd like it to be.
+
+### References
+- https://www.youtube.com/watch?v=RkuBWEkBrZA
+- https://www.youtube.com/watch?v=KkyIDI6rQJI
 
 # P.S: My Meditative Music Recommendations:
 - Aphex Twin - [Stone in Focus](https://www.youtube.com/watch?v=q86g1aop6a8)
